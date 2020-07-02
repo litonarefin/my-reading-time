@@ -5,5 +5,5 @@ function scrollProgress() {
   var currentState = document.body.scrollTop || document.documentElement.scrollTop;
   var pageHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrollStatePercentage = (currentState / pageHeight) * 100;
-  document.querySelector(".page-scroll-indicator > .progress").style.width = scrollStatePercentage + "%";
+  document.querySelector(".ma-el-page-scroll-indicator > .ma-el-scroll-indicator").style.width = scrollStatePercentage + "%";
 }
