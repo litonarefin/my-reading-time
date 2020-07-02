@@ -17,16 +17,6 @@ class JLTMA_My_Reading_Time {
 		'em'     => []
 	];
 
-
-	// Allowed HTML Tags
-	public static $mrt_default_values = [
-		'strong' => [],
-		'br'     => [],
-		'b'      => [],
-		'em'     => []
-	];
-
-
     public function __construct(){
 		$this->jltma_mrt_include_files();
 	}
@@ -42,10 +32,13 @@ class JLTMA_My_Reading_Time {
 		// Admin Settings
 		include( MRT_DIR . '/admin/class.settings-api.php');
 		include( MRT_DIR . '/admin/my-reading-time-settings.php');
+
+
 	}
 
 
-	public static function jltma_mrt_times(){
+	// My Reading Times Filter
+	public static function jltma_mrt_times($time, $singular, $multiple ) {
 		if ( $time > 1 ) {
 			$mrt_in_times = $multiple;
 		} else {

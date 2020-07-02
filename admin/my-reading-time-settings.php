@@ -12,12 +12,13 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
 
             add_action( 'admin_init', array($this, 'jltma_mrt_admin_init') );
             add_action( 'admin_menu', array($this, 'jltma_mrt_admin_menu') );
-
+            
             add_action( 'admin_enqueue_scripts', array( $this, 'jltma_mrt_admin_enqueue_scripts' ) );
+            
         }
 
         public function jltma_mrt_admin_enqueue_scripts(){
-            wp_enqueue_style( 'mrt-admin', MRT_URL . '/assets/mrt-admin.css' );
+            wp_enqueue_style( 'mrt-admin', MRT_URL . '/assets/css/mrt-admin.css' );
         }
 
 
@@ -78,14 +79,14 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                     ),
                     array(
                         'name'      => 'mrt_time_in_mins',
-                        'label'     => esc_html__( 'Time in Minutes', MRT_TD ),
+                        'label'     => esc_html__( 'Time in Minutes(mins)', MRT_TD ),
                         'desc'      => esc_html__( 'Minutes text after Time', MRT_TD ),
                         'default'   => esc_html__( 'mins', MRT_TD ),
                         'type'      => 'text'
                     ),  
                     array(
                         'name'      => 'mrt_time_in_min',
-                        'label'     => esc_html__( 'Time in Minute', MRT_TD ),
+                        'label'     => esc_html__( 'Time in Minute(min)', MRT_TD ),
                         'desc'      => esc_html__( 'Minute text after Time', MRT_TD ),
                         'default'   => esc_html__( 'min', MRT_TD ),
                         'type'      => 'text'
