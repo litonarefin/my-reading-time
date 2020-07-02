@@ -12,10 +12,16 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
 
             add_action( 'admin_init', array($this, 'jltma_mrt_admin_init') );
             add_action( 'admin_menu', array($this, 'jltma_mrt_admin_menu') );
+
+            add_action( 'admin_enqueue_scripts', array( $this, 'jltma_mrt_admin_enqueue_scripts' ) );
+        }
+
+        public function jltma_mrt_admin_enqueue_scripts(){
+            wp_enqueue_style( 'mrt-admin', MRT_URL . '/assets/mrt-admin.css' );
         }
 
 
-        function jltma_mrt_admin_init() {
+        public function jltma_mrt_admin_init() {
 
             //set the settings
             $this->settings_api->set_sections( $this->get_settings_sections() );
@@ -24,8 +30,7 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
             $this->settings_api->admin_init();
         }
 
-        function jltma_mrt_admin_menu() {
-
+        public function jltma_mrt_admin_menu() {
             add_options_page(
                 esc_html__('My Reading Time Settings', MRT_TD ),
                 esc_html__('My Reading Time', MRT_TD ),
@@ -33,30 +38,21 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                 'my-reading-time-settings',
                 array( $this, 'plugin_page' )
             );
-
-
-            // add_submenu_page('edit.php?post_type=faq', 
-            //     __('My Reading Time', MRT_TD ),
-            //     __('Settings', MRT_TD ),
-            //     'edit_posts', 
-            //     'jltma_mrt_faq_settings', 
-            //     array($this, 'plugin_page') 
-            // );
         }
 
         function get_settings_sections() {
             $sections = array(
                 array(
                     'id' => 'jltma_mrt_content',
-                    'title' => __( 'Content', MRT_TD )
+                    'title' => esc_html__( 'Content', MRT_TD )
                 ),
                 array(
                     'id' => 'jltma_mrt_settings',
-                    'title' => __( 'Settings', MRT_TD )
+                    'title' => esc_html__( 'Settings', MRT_TD )
                 ),
                 array(
                     'id' => 'jltma_mrt_free_vs_pro',
-                    'title' => __( 'Free vs Pro', MRT_TD ),
+                    'title' => esc_html__( 'Free vs Pro', MRT_TD ),
                     'callback' => [$this, 'html_only']
                 )
             );
@@ -372,9 +368,9 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                     <?php echo sprintf( __( 'Hello, %s,', MRT_TD ), '<span>' . esc_html( ucfirst( $user->display_name ) ) . '</span>' ); ?>
                 </p>
                 <h1 class="info-title">
-                    <?php echo sprintf( __( 'Welcome to %s', MRT_TD ), MAF ); ?>
+                    <?php echo sprintf( __( 'Welcome to %s', MRT_TD ), MRT ); ?>
                     <span class="info-version">
-                        <?php echo 'v' . MAF_VERSION; ?>    
+                        <?php echo 'v' . MRT_VERSION; ?>    
                     </span>
                 </h1>
                 <p class="welcome-desc">

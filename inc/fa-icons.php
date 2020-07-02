@@ -1,5 +1,5 @@
 <?php
-function jltmaf_fa_icons() {
+function jltma_mrt_fa_icons() {
 
     return array (
         'fab fa-500px' => __( '500px', MRT_TD ),
