@@ -43,10 +43,6 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
         function get_settings_sections() {
             $sections = array(
                 array(
-                    'id' => 'jltma_mrt_content',
-                    'title' => esc_html__( 'Content', MRT_TD )
-                ),
-                array(
                     'id' => 'jltma_mrt_settings',
                     'title' => esc_html__( 'Settings', MRT_TD )
                 ),
@@ -69,113 +65,72 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
          */
         function get_settings_fields() {
             
-            /* Master FAQ General Settings */
+            /* My Reading Time General Settings */
             $settings_fields = array(
-
-                'jltma_mrt_content' => array(
-                    array(
-                        'name' => 'posts_per_page',
-                        'label' => __( 'FAQ Posts Per Page', MRT_TD ),
-                        'desc' => __( 'Choose FAQ Posts per page (-1 for All Posts).', MRT_TD ),
-                        'type' => 'text',
-                        'default' => '-1'
-                    ),
-                    array(
-                        'name' => 'faq-title-bg-color',
-                        'label' => __( 'Title Background Color', MRT_TD ),
-                        'desc' => __( 'Select FAQ Default Background Color. Default: #2c3e50', MRT_TD ),
-                        'default' => '#2c3e50',
-                        'type' => 'color'
-                    ),  
-
-                    array(
-                        'name' => 'faq-title-text-color',
-                        'label' => __( 'Title Text Color', MRT_TD ),
-                        'desc' => __( 'Select FAQ Default Title Text Color. Default: #ffffff', MRT_TD ),
-                        'default' => '#ffffff',
-                        'type' => 'color'
-                    ),
-
-                    array(
-                        'name' => 'faq-bg-color',
-                        'label' => __( 'Content Background Color', MRT_TD ),
-                        'desc' => __( 'Select FAQ Default Content Background Color. Default: #ffffff', MRT_TD ),
-                        'default' => '#ffffff',
-                        'type' => 'color'
-                    ),                               
-
-                    array(
-                        'name' => 'faq-text-color',
-                        'label' => __( 'Content Text Color', MRT_TD ),
-                        'desc' => __( 'Select FAQ Content Default Text Color. Default: #444', MRT_TD ),
-                        'default' => '#444',
-                        'type' => 'color'
-                    )
-                ),
 
                 'jltma_mrt_settings' => array(
                     array(
-                        'name' => 'faq_close_icon',
-                        'label' => __( 'Collapse Icon', MRT_TD ),
-                        'desc' => __( 'Choose FAQ\'s Close icon', MRT_TD ),
-                        'type' => 'fonticon',
-                        'default' => 'fa fa-chevron-up',
-                        'options' => jltma_mrt_fa_icons()            
+                        'name'      => 'mrt_label',
+                        'label'     => esc_html__( 'Reading Time Label', MRT_TD ),
+                        'desc'      => esc_html__( 'Reading Time Label', MRT_TD ),
+                        'type'      => 'text',
+                        'default'   => esc_html__( 'Reading Time:', MRT_TD ),
+                    ),
+                    array(
+                        'name'      => 'mrt_time_in_mins',
+                        'label'     => esc_html__( 'Time in Minutes', MRT_TD ),
+                        'desc'      => esc_html__( 'Minutes text after Time', MRT_TD ),
+                        'default'   => esc_html__( 'mins', MRT_TD ),
+                        'type'      => 'text'
+                    ),  
+                    array(
+                        'name'      => 'mrt_time_in_min',
+                        'label'     => esc_html__( 'Time in Minute', MRT_TD ),
+                        'desc'      => esc_html__( 'Minute text after Time', MRT_TD ),
+                        'default'   => esc_html__( 'min', MRT_TD ),
+                        'type'      => 'text'
+                    ),  
+
+                    array(
+                        'name'      => 'mrt_words_per_min',
+                        'label'     => esc_html__( 'Words Per Minute', MRT_TD ),
+                        'desc'      => esc_html__( 'How many words can read per minute. Standard 275', MRT_TD ),
+                        'default'   => esc_html__( '200', MRT_TD ),
+                        'type'      => 'text'
                     ),
 
                     array(
-                        'name' => 'faq_open_icon',
-                        'label' => __( 'Open Icon', MRT_TD ),
-                        'desc' => __( 'Choose FAQ\'s Open icon', MRT_TD ),
-                        'type' => 'fonticon',
-                        'default' => 'fa fa-chevron-down',
-                        'options' => jltma_mrt_fa_icons()            
+                        'name'      => 'mrt_before_content',
+                        'label'     => esc_html__( 'Show on before Content?', MRT_TD ),
+                        'desc'      => esc_html__( 'Show "My Reading Time" before Content', MRT_TD ),
+                        'type'      => 'checkbox'
+                    ),
+
+
+                    array(
+                        'name'      => 'mrt_before_excerpt',
+                        'label'     => esc_html__( 'Show on before Excerpt?', MRT_TD ),
+                        'desc'      => esc_html__( 'Show "My Reading Time" before Content Excerpt', MRT_TD ),
+                        'type'      => 'checkbox'
+                    ),
+
+
+                    array(
+                        'name'      => 'mrt_exclude_images',
+                        'label'     => esc_html__( 'Exclude Images from Reading Time?', MRT_TD ),
+                        'desc'      => esc_html__( 'Check to exclude Images from Content Reading Time', MRT_TD ),
+                        'type'      => 'checkbox'
                     ),
 
                     array(
-                        'name'    => 'faq_icon_position',
-                        'label'   => __( 'Icon Alignment', MRT_TD ),
-                        'desc'    => __( 'Alignment Icon position for FAQ Title', MRT_TD ),
-                        'type'    => 'select',
-                        'default' => 'none',
-                        'options' => array(
-                            'none'            => __('Default', MRT_TD),
-                            'left'            => __('Left', MRT_TD),
-                            'right'           => __('Right', MRT_TD)
-                        )
+                        'name'      => 'mrt_shortcodes_include',
+                        'label'     => esc_html__( 'Include Shortcode Contents?', MRT_TD ),
+                        'desc'      => esc_html__( 'Check to count Shortcodes Contents on Reading Time', MRT_TD ),
+                        'type'      => 'checkbox'
                     ),
+                ),
 
-                    array(
-                        'name'    => 'faq_collapse_style',
-                        'label'   => __( 'Open/Collapse Style', MRT_TD ),
-                        'desc'    => __( 'Select your FAQ\'s Open/Collapse Style ', MRT_TD ),
-                        'type'    => 'select',
-                        'default' => 'close_all',
-                        'options' => array(
-                            'close_all'         => __('Close All', MRT_TD),
-                            'open_all'          => __('Open All', MRT_TD),
-                            'first_open'        => __('1st Item Open', MRT_TD)
-                        )
-                    ),
-                    array(
-                        'name'    => 'faq_heading_tags',
-                        'label'   => __( 'Heading Tag', MRT_TD ),
-                        'desc'    => __( 'Select your Heading Title Tags', MRT_TD ),
-                        'type'    => 'select',
-                        'default' => 'h3',
-                        'options' => array(
-                            'h1'         => __('H1', MRT_TD),
-                            'h2'         => __('H2', MRT_TD),
-                            'h3'         => __('H3', MRT_TD),
-                            'h4'         => __('H4', MRT_TD),
-                            'h5'         => __('H5', MRT_TD),
-                            'h6'         => __('H6', MRT_TD),
-                            'span'       => __('span', MRT_TD),
-                            'p'          => __('p', MRT_TD),
-                            'div'        => __('div', MRT_TD),
-                        )
-                    ),
-                ), 
+
                 'jltma_mrt_free_vs_pro' => array(
                     array(
                         'name'          => '',
@@ -235,7 +190,7 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Gutenberg Block ( Master FAQ Accordion)', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Gutenberg Block ( My Reading Time Accordion)', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
