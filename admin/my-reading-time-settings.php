@@ -48,6 +48,10 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                     'title' => esc_html__( 'Settings', MRT_TD )
                 ),
                 array(
+                    'id' => 'jltma_mrt_onscroll',
+                    'title' => esc_html__( 'Progressbar', MRT_TD )
+                ),
+                array(
                     'id' => 'jltma_mrt_free_vs_pro',
                     'title' => esc_html__( 'Free vs Pro', MRT_TD ),
                     'callback' => [$this, 'html_only']
@@ -131,6 +135,28 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                     ),
                 ),
 
+
+                'jltma_mrt_onscroll' => array(
+
+                    array(
+                        'name' => 'mrt_bg_color',
+                        'label' => __( 'Background Color', MAF_TD ),
+                        'desc' => __( 'Select Scrollbar Background Color. Default: #2c3e50', MAF_TD ),
+                        'default' => '#2c3e50',
+                        'type' => 'color'
+                    ),
+                    array(
+                        'name' => 'mrt_progress_color',
+                        'label' => __( 'Progress Color', MAF_TD ),
+                        'desc' => __( 'Select Scroll Progressbar Color. Default: #2c3e50', MAF_TD ),
+                        'default' => '#2c3e50',
+                        'type' => 'color'
+                    ),
+
+
+                ),
+
+                
 
                 'jltma_mrt_free_vs_pro' => array(
                     array(
