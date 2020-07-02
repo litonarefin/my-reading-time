@@ -140,18 +140,26 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
 
                     array(
                         'name' => 'mrt_bg_color',
-                        'label' => __( 'Background Color', MAF_TD ),
-                        'desc' => __( 'Select Scrollbar Background Color. Default: #2c3e50', MAF_TD ),
+                        'label' => esc_html__( 'Background Color', MRT_TD ),
+                        'desc' => esc_html__( 'Select Scrollbar Background Color. Default: #2c3e50', MRT_TD ),
                         'default' => '#2c3e50',
                         'type' => 'color'
                     ),
                     array(
                         'name' => 'mrt_progress_color',
-                        'label' => __( 'Progress Color', MAF_TD ),
-                        'desc' => __( 'Select Scroll Progressbar Color. Default: #2c3e50', MAF_TD ),
-                        'default' => '#2c3e50',
+                        'label' => esc_html__( 'Progress Color', MRT_TD ),
+                        'desc' => esc_html__( 'Select Scroll Progressbar Color. Default: #007bff', MRT_TD ),
+                        'default' => '#007bff',
                         'type' => 'color'
                     ),
+                    array(
+                        'name'      => 'mrt_progress_height',
+                        'label'     => esc_html__( 'Progressbar Height(px)', MRT_TD ),
+                        'desc'      => esc_html__( 'Set Height(px) for Scroll Progressbar Content', MRT_TD ),
+                        'default'   => esc_html__( '5', MRT_TD ),
+                        'type'      => 'text'
+                    ),
+
 
 
                 ),

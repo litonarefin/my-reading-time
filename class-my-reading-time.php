@@ -38,14 +38,14 @@ class JLTMA_My_Reading_Time {
 
 
 	// My Reading Times Filter
-	public static function jltma_mrt_times($time, $singular, $multiple ) {
+	public static function jltma_mrt_times($time, $single, $plugral ) {
 		if ( $time > 1 ) {
-			$mrt_in_times = $multiple;
+			$mrt_in_times = $plugral;
 		} else {
-			$mrt_in_times = $singular;
+			$mrt_in_times = $single;
 		}
 
-		$mrt_in_times = apply_filters( 'mrt_edit_times', $mrt_in_times, $time, $singular, $multiple );
+		$mrt_in_times = apply_filters( 'mrt_edit_times', $mrt_in_times, $time, $single, $plugral );
 
 		return $mrt_in_times;
 	}

@@ -17,6 +17,22 @@ class JLTMA_MRT_Hooks {
 	public function jltma_mrt_assets(){
 		wp_enqueue_style( 'mrt-pagescroll-indicator', MRT_URL . '/assets/css/pageScrollIndicator.css' );
 		wp_enqueue_script( 'mrt-pagescroll-indicator', MRT_URL . '/assets/js/pageScrollIndicator.js' );
+
+		
+		$mrt_bg_color 			= jltma_mrt_options( 'mrt_bg_color', 'jltma_mrt_onscroll', '#2c3e50' );
+		$mrt_progress_color 	= jltma_mrt_options( 'mrt_progress_color', 'jltma_mrt_onscroll', '#007bff' );
+		$mrt_progress_height 	= jltma_mrt_options( 'mrt_progress_height', 'jltma_mrt_onscroll', '5' );
+		
+		$jltma_mrt_custom_css = "";
+
+		if( $mrt_bg_color !="" && $mrt_progress_color !="" ){
+	        $jltma_mrt_custom_css .= "
+	            .ma-el-page-scroll-indicator{ background: {$mrt_bg_color};}
+	            .ma-el-scroll-indicator{ background: {$mrt_progress_color};}
+	            .ma-el-page-scroll-indicator, .ma-el-scroll-indicator{ height: {$mrt_progress_height}px;}";
+		}
+
+        wp_add_inline_style( 'mrt-pagescroll-indicator', $jltma_mrt_custom_css );		
 	}
 
 
@@ -57,13 +73,12 @@ class JLTMA_MRT_Hooks {
 			return $content;
 		}
 		
-		$calculated_times = JLTMA_My_Reading_Time::jltma_mrt_times( $jltma_mrt, $mrt_time_in_min, $mrt_time_in_min );
+		$calculated_times = JLTMA_My_Reading_Time::jltma_mrt_times( $jltma_mrt, $mrt_time_in_min, $mrt_time_in_mins );
 
 
 		$content  = '<span class="jltma-mrt">
 						<span class="mrt-label mrt-prefix">' . wp_kses( $mrt_label, $jltma_mrt ) . '</span> 
-						<span class="mrt-time"> ' . esc_html( $jltma_mrt ) . '</span> 
-						<span class="mrt-label mrt-postfix">' . wp_kses( $calculated_times, $jltma_mrt ) . '</span>
+						<span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span>
 					</span>';
 		$content  .= '<div class="ma-el-page-scroll-indicator"><div class="ma-el-scroll-indicator"></div></div>';					
 
@@ -86,13 +101,9 @@ class JLTMA_MRT_Hooks {
 		$mrt_time_in_min  = jltma_mrt_options( 'mrt_time_in_min', 'jltma_mrt_settings', esc_html__('min', MRT_TD ) );
 
 
-		$calculated_times = JLTMA_My_Reading_Time::jltma_mrt_times( $jltma_mrt, $mrt_time_in_min, $mrt_time_in_min );
+		$calculated_times = JLTMA_My_Reading_Time::jltma_mrt_times( $jltma_mrt, $mrt_time_in_min, $mrt_time_in_mins );
 
-		$content  = '<span class="jltma-mrt" style="display: block;">
-						<span class="mrt-label mrt-prefix">' . wp_kses( $mrt_label, $jltma_mrt ) . '</span>
-						<span class="mrt-time">' . esc_html( $jltma_mrt ) . '</span>
-						<span class="mrt-label mrt-postfix">' . wp_kses( $calculated_times, $jltma_mrt ) . '</span>
-					</span> ';
+		$content  = '<span class="jltma-mrt" style="display: block;"><span class="mrt-label mrt-prefix">' . wp_kses( $mrt_label, $jltma_mrt ) . '</span><span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span> </span> ';
 
 		$content .= $main_content;
 
