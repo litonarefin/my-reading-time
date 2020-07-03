@@ -80,6 +80,18 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                         'desc'      => esc_html__( 'Reading Time Label', MRT_TD ),
                         'type'      => 'text',
                         'default'   => esc_html__( 'Reading Time:', MRT_TD ),
+                    ), 
+
+                    array(
+                        'name'      => 'mrt_label_position',
+                        'label'     => esc_html__( 'Reading Time Label', MRT_TD ),
+                        'desc'      => esc_html__( 'Reading Time Label', MRT_TD ),
+                        'type'      => 'select',
+                        'default'   => 'before',
+                        'options'   => array(
+                            'before'        => esc_html__('Before Time', MRT_TD),
+                            'after'         => esc_html__('After Time', MRT_TD)
+                        )
                     ),
                     array(
                         'name'      => 'mrt_time_in_mins',
@@ -137,6 +149,13 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
 
 
                 'jltma_mrt_onscroll' => array(
+
+                    array(
+                        'name'      => 'mrt_enable_progress',
+                        'label'     => esc_html__( 'Enable Progressbar', MRT_TD ),
+                        'desc'      => esc_html__( 'Enable/Disable Progressbar', MRT_TD ),
+                        'type'      => 'checkbox'
+                    ),
 
                     array(
                         'name' => 'mrt_bg_color',
@@ -363,8 +382,21 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                         <?php echo 'v' . MRT_VERSION; ?>    
                     </span>
                 </h1>
-                <p class="welcome-desc">
-                    <?php _e( 'Master Accordion is now installed and ready to go. To help you with the next step, we’ve gathered together on this page all the resources you might need. We hope you enjoy using Master Accordion. You can always come back to this page by going to <strong>FAQs > Settings</strong>.', MRT_TD ); ?>
+                <p class="welcome-desc"> 
+                    <strong> Usage:</strong><br>
+                    <code>
+                        [my_reading_time mrt_label="Reading Time" mrt_time_in_mins="mins" mrt_time_in_min="minute"]
+                    </code><br>
+
+                   <strong> For Specific Post ID:</strong>
+                    <code>
+                        [my_reading_time mrt_label="Reading Time" mrt_time_in_mins="mins" mrt_time_in_min="minute" post_id="2"]
+                    </code>
+                    <br>
+
+                    Or simply use <code>[my_reading_time]</code> to return the number with no labels.<br>
+
+                    Want to insert the reading time into your theme? Use <code>do_shortcode('[my_reading_time]')</code>. 
                 </p>
 
 

@@ -9,10 +9,20 @@ class JLTMA_MRT_Hooks {
 	public function __construct() {		
 
 		$this->jltma_mrt_init();
-
-		add_action( 'wp_enqueue_scripts', [$this, 'jltma_mrt_assets'] );
+		
+		$this->jltma_mrt_scripts();
 
 	}
+
+
+	public function jltma_mrt_scripts(){
+		$mrt_enable_progress 	= jltma_mrt_options( 'mrt_enable_progress', 'jltma_mrt_onscroll', 'on' );
+		if( $mrt_enable_progress =="on" ){
+			add_action( 'wp_enqueue_scripts', [$this, 'jltma_mrt_assets'] );
+		}
+		
+	}
+	
 
 	public function jltma_mrt_assets(){
 		wp_enqueue_style( 'mrt-pagescroll-indicator', MRT_URL . '/assets/css/pageScrollIndicator.css' );
@@ -75,11 +85,17 @@ class JLTMA_MRT_Hooks {
 		
 		$calculated_times = JLTMA_My_Reading_Time::jltma_mrt_times( $jltma_mrt, $mrt_time_in_min, $mrt_time_in_mins );
 
+		// Label Alignment before/after
+		$mrt_label_position  = jltma_mrt_options( 'mrt_label_position', 'jltma_mrt_settings', 'before' );
+		
+		if( $mrt_label_position == "before"){
+			$mrt_contents = '<span class="mrt-label">' . wp_kses( $mrt_label, $jltma_mrt ) . '</span> <span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span>';
+		}elseif ($mrt_label_position == "after") {
+			$mrt_contents = '<span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span> <span class="mrt-label"> ' . wp_kses( $mrt_label, $jltma_mrt ) . '</span>';
+		}
 
-		$content  = '<span class="jltma-mrt">
-						<span class="mrt-label mrt-prefix">' . wp_kses( $mrt_label, $jltma_mrt ) . '</span> 
-						<span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span>
-					</span>';
+		$content  = '<span class="jltma-mrt">' . $mrt_contents . '</span>';
+
 		$content  .= '<div class="ma-el-page-scroll-indicator"><div class="ma-el-scroll-indicator"></div></div>';					
 
 		$content .= $main_content;
@@ -103,7 +119,18 @@ class JLTMA_MRT_Hooks {
 
 		$calculated_times = JLTMA_My_Reading_Time::jltma_mrt_times( $jltma_mrt, $mrt_time_in_min, $mrt_time_in_mins );
 
-		$content  = '<span class="jltma-mrt" style="display: block;"><span class="mrt-label mrt-prefix">' . wp_kses( $mrt_label, $jltma_mrt ) . '</span><span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span> </span> ';
+
+		// Label Alignment before/after
+		$mrt_label_position  = jltma_mrt_options( 'mrt_label_position', 'jltma_mrt_settings', 'before' );
+		
+		if( $mrt_label_position == "before"){
+			$mrt_contents = '<span class="mrt-label">' . wp_kses( $mrt_label, $jltma_mrt ) . '</span> <span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span>';
+		}elseif ($mrt_label_position == "after") {
+			$mrt_contents = '<span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span> <span class="mrt-label"> ' . wp_kses( $mrt_label, $jltma_mrt ) . '</span>';
+		}
+
+		
+		$content  = '<span class="jltma-mrt" style="display: block;">' . $mrt_contents . '</span> ';
 
 		$content .= $main_content;
 
