@@ -84,8 +84,8 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
 
                     array(
                         'name'      => 'mrt_label_position',
-                        'label'     => esc_html__( 'Reading Time Label', MRT_TD ),
-                        'desc'      => esc_html__( 'Reading Time Label', MRT_TD ),
+                        'label'     => esc_html__( 'After/Before Reading Label', MRT_TD ),
+                        'desc'      => esc_html__( 'Show Reading Label after/before time', MRT_TD ),
                         'type'      => 'select',
                         'default'   => 'before',
                         'options'   => array(

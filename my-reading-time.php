@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: AAA My Reading Time
+ * Plugin Name: My Reading Time
  * Description: Post/Page Reading Time for WordPress
  * Plugin URI:  https://master-addons.com/
  * Version:     1.0.0
