@@ -40,9 +40,8 @@ class JLTMA_MRT_Shortcode {
 			$mrt_contents = '<span class="mrt-time"> ' . esc_html( $jltma_mrt ) . wp_kses( $calculated_times, $jltma_mrt ) . '</span> <span class="mrt-label"> ' . wp_kses( $mrt_label, $jltma_mrt ) . '</span>';
 		}
 
-
 		return '<span class="jltma-mrt">' . $mrt_contents . '</span>';
-		
+
 	}
 
 	

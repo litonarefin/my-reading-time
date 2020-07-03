@@ -75,25 +75,28 @@
     width: auto;
     text-align: left;
 }
-#jltmaf_free_vs_pro .form-table table {
+#jltma_mrt_free_vs_pro .form-table table {
 	border-collapse: collapse;
 }
-#jltmaf_free_vs_pro .form-table th,
-#jltmaf_free_vs_pro .form-table td {
+#jltma_mrt_free_vs_pro .form-table th,
+#jltma_mrt_free_vs_pro .form-table td {
 	border: 1px solid #ebebeb;
 	padding: 20px;
 	text-align: center;
 }
-#jltmaf_free_vs_pro .form-table tbody:first-child tr{
+#jltma_mrt_free_vs_pro .form-table td:first-child{
+	text-align: left;
+}
+#jltma_mrt_free_vs_pro .form-table tbody:first-child tr{
 	display: none;
 } 
-#jltmaf_free_vs_pro .form-table .dash-green {
+#jltma_mrt_free_vs_pro .form-table .dash-green {
 	color: #5ad15a;
     font-size: 28px;
     height: auto;
     width: auto;
 }
-#jltmaf_free_vs_pro .form-table .dash-red {
+#jltma_mrt_free_vs_pro .form-table .dash-red {
 	color: #fc6f6f;
     font-size: 28px;
     height: auto;

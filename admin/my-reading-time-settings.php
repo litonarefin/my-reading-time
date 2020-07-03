@@ -235,117 +235,89 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                       </tr>
                       <tr>
                          <td><?php esc_html_e( 'Gutenberg Support', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Shortcode Generator - Classic Editor', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Gutenberg Block ( My Reading Time Accordion)', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Shortcode Support', MRT_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Fully Responsive', MRT_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+
+                      <tr>
+                         <td><?php esc_html_e( 'Developer Friendly', MRT_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Max Words Per Minute', MRT_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Enable/Disable Progressbar', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
 
                       <tr>
-                         <td><?php esc_html_e( 'Custom Elementor blocks(Master Accordion Addon)', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Nested FAQ', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Drag & Drop Sorting FAQ Items', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Unlimited Progressbar Colors', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
+
                       <tr>
-                         <td><?php esc_html_e( 'Translation ready', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Heading Tags Selection', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Progressbar Height', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
+
                       <tr>
-                         <td><?php esc_html_e( 'FAQ by Category', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'FAQ by Tags', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Accordion/Toogle Type', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'After/Before Reading Label', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
+
                       <tr>
-                         <td><?php esc_html_e( 'Single FAQ Template', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Supports Excerpt', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
+
                       <tr>
-                         <td><?php esc_html_e( 'Open/Close Icon Settings', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Individual Open/Close Icon Settings', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Count Images on Reading Time', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
+
                       <tr>
-                         <td><?php esc_html_e( 'Icon Alignment(Left/Right) Settings', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Collapse/Open Style(1st Open, Close All, Open All) Settings', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Count Shortcodes on Reading Time', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
+                      
                       <tr>
-                         <td><?php esc_html_e( 'Title Heading Selection Settings', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Title Color Settings', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'All Themes Support', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Individual Title Color Settings', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Title Background Settings', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'PHP Template Code', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Individual Title Background Settings', MRT_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Content Background Settings', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( 'Extensive Documentation', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Individual Content Background Settings', MRT_TD ); ?></td>
+                         <td><?php esc_html_e( '24/7 Support', MRT_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
@@ -353,7 +325,7 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                    </tbody>
 
                    <p style="text-align: right;">
-                      <a class="button button-primary button-large" href="https://jeweltheme.com/shop/wordpress-faq-plugin/?utm_source=plugin_admin&utm_medium=button&utm_campaign=dashboard" target="_blank"><?php esc_html_e('View Master Accordion Pro', MRT_TD); ?>
+                      <a class="button button-primary button-large" href="https://master-addons.com" target="_blank"><?php esc_html_e('View My Reading Time Pro', MRT_TD); ?>
                       </a>
                    </p>
 
@@ -412,7 +384,7 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
                             <span class="dashicons dashicons-sos"></span>
                             <h3><?php esc_html_e( 'Visit our forums', MRT_TD ); ?></h3>
                             <p><?php esc_html_e( 'Need help? Go ahead and visit our support forums and we\'ll be happy to assist you with any theme related questions you might have', MRT_TD ); ?></p>
-                                <a href="https://jeweltheme.com/support/forum/wordpress-plugins/wp-awesome-faq/" target="_blank"><?php esc_html_e( 'Visit the forums', MRT_TD ); ?></a>              
+                                <a href="https://jeweltheme.com/support/forum/wordpress-plugins/my-reading-time/" target="_blank"><?php esc_html_e( 'Visit the forums', MRT_TD ); ?></a>              
                                 </div>
                             <div class="tab-column">
                             <span class="dashicons dashicons-book-alt"></span>
@@ -428,29 +400,27 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
 
                 <div class="jltmaf-theme-sidebar">
                     <div class="jltmaf-sidebar-widget">
-                        <h3>Review Master Accordion</h3>
+                        <h3>Review "My Reading Time"</h3>
                         <p>It makes us happy to hear from our users. We would appreciate a review. </p> 
-                        <p><a target="_blank" href="https://wordpress.org/support/plugin/wp-awesome-faq/reviews/#new-post">Write a review here</a></p>     
+                        <p><a target="_blank" href="https://wordpress.org/support/plugin/my-reading-time/reviews/#new-post">Write a review here</a></p>     
                     </div>
                     <hr style="margin-top:25px;margin-bottom:25px;">
                     <div class="jltmaf-sidebar-widget">
                         <h3>Changelog</h3>
                         <p>Keep informed about each theme update. </p>  
-                        <p><a target="_blank" href="https://wordpress.org/plugins/wp-awesome-faq/#developers">See the changelog</a></p>       
+                        <p><a target="_blank" href="https://wordpress.org/plugins/my-reading-time/#developers">See the changelog</a></p>       
                     </div>  
                     <hr style="margin-top:25px;margin-bottom:25px;">
                     <div class="jltmaf-sidebar-widget">
-                        <h3>Upgrade to Master Accordion Pro</h3>
-                        <p>Take your "Master Accordions" to a whole other level by upgrading to the Pro version. </p>   
-                        <p><a target="_blank" href="https://jeweltheme.com/shop/wordpress-faq-plugin/?utm_source=plugin_admin&utm_medium=button&utm_campaign=dashboard">Discover Master Accordion Pro</a></p>      
+                        <h3>Upgrade to My Reading Time Pro</h3>
+                        <p>Take your "My Reading Time" to a whole other level by upgrading to the Pro version. </p>   
+                        <p><a target="_blank" href="https://master-addons.com">Discover My Reading Time Pro</a></p>      
                     </div>                                  
                 </div>
 
             </div>
 
             <?php 
-
-            // echo '</div>';
         }
 
         /**
