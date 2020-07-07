@@ -346,10 +346,10 @@ if ( !class_exists('JLAMA_MRT_Settings_API' ) ){
             <div class="info-container">
 
                 <p class="hello-user">
-                    <?php echo sprintf( __( 'Hello, %s,', MRT_TD ), '<span>' . esc_html( ucfirst( $user->display_name ) ) . '</span>' ); ?>
+                    <?php echo sprintf( esc_html__( 'Hello, %s,', MRT_TD ), '<span>' . esc_html( ucfirst( $user->display_name ) ) . '</span>' ); ?>
                 </p>
                 <h1 class="info-title">
-                    <?php echo sprintf( __( 'Welcome to %s', MRT_TD ), MRT ); ?>
+                    <?php echo sprintf( esc_html__( 'Welcome to %s', MRT_TD ), MRT ); ?>
                     <span class="info-version">
                         <?php echo 'v' . MRT_VERSION; ?>    
                     </span>

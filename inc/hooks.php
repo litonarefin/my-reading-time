@@ -26,7 +26,7 @@ class JLTMA_MRT_Hooks {
 
 	public function jltma_mrt_assets(){
 		wp_enqueue_style( 'mrt-pagescroll-indicator', MRT_URL . '/assets/css/pageScrollIndicator.css' );
-		wp_enqueue_script( 'mrt-pagescroll-indicator', MRT_URL . '/assets/js/pageScrollIndicator.js' );
+		wp_enqueue_script( 'mrt-pagescroll-indicator', MRT_URL . '/assets/js/pageScrollIndicator.js', array('jquery'), MRT_VERSION, true );
 
 		
 		$mrt_bg_color 			= jltma_mrt_options( 'mrt_bg_color', 'jltma_mrt_onscroll', '#2c3e50' );
@@ -42,7 +42,7 @@ class JLTMA_MRT_Hooks {
 	            .ma-el-page-scroll-indicator, .ma-el-scroll-indicator{ height: {$mrt_progress_height}px;}";
 		}
 
-        wp_add_inline_style( 'mrt-pagescroll-indicator', $jltma_mrt_custom_css );		
+        wp_add_inline_style( 'mrt-pagescroll-indicator', $jltma_mrt_custom_css );
 	}
 
 
